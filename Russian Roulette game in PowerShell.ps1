@@ -8,6 +8,35 @@ if (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
 }
 
 
+
+if (Test-Path $env:USERPROFILE\Documents\RR.txt) {
+    # pick a message at random if the file exists
+    $messages = @(
+        "You must really enjoy getting beat. Well, I'm happy to oblige and give you another dose of defeat.",
+        "It looks like you've been here before. Let me remind you what it feels like to lose.",
+        "I see you're back for more punishment. Bring it on, I'm ready to defeat you again.",
+		"I enjoy nothing more than watching you suffer and lose. You might as well just give up now and save yourself the embarrassment of another defeat at my hands.",
+"Your attempts to defeat me are pitiful and weak. It's almost like you want me to crush you and revel in your misery.",
+"I am the ultimate foe and you are no match for my superior intellect and unbeatable skills. Prepare to be humiliated and defeated once again."
+    )
+    $index = Get-Random -Minimum 0 -Maximum ($messages.Length - 1)
+    Write-Host $messages[$index]
+    sleep 3
+} else {
+    # pick a different message at random if the file does not exist
+    $messages = @(
+        "It looks like you're new to this game. Let me be the first to welcome you and warn you that defeat is imminent.",
+        "Welcome to the game! I hope you're ready to taste defeat.",
+        "I see you're new here. You should know that losing is a common occurrence for newcomers like you."
+    )
+    $index = Get-Random -Minimum 0 -Maximum ($messages.Length - 1)
+    Write-Host $messages[$index]
+    sleep 3
+}
+
+Out-File $env:USERPROFILE\Documents\RR.txt -InputObject "Played Before"
+
+
 # Define the number of chambers in the gun
 $chambers = 6
 
