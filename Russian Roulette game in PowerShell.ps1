@@ -61,8 +61,11 @@ while ($true) {
 		clear
     } else {
         # The user has survived
-        Write-Host "You survived! Try again..."
+        Write-Output "Click. The gun is still loaded. Press Enter to spin again..."
 		sleep 3
 		clear
     }
 }
+
+
+
