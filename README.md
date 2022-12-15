@@ -2,10 +2,6 @@
 
 This is a script that simulates the deadly game of Russian roulette using your computer's processes. Use at your own risk!
 
-## Getting Started
-
-These instructions will guide you through the process of setting up and running the script on your computer.
-
 ### Prerequisites
 
 - PowerShell: This script requires PowerShell to run. It has been tested on PowerShell version 7.0.
